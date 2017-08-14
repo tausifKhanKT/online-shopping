@@ -9,7 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.tausif.shoppingbackend.dao.UserDAO;
 import com.tausif.shoppingbackend.dto.Address;
-import com.tausif.shoppingbackend.dto.Cart;
 import com.tausif.shoppingbackend.dto.User;
 
 @Repository("userDAO")
@@ -44,19 +43,6 @@ public class UserDAOImpl implements UserDAO {
 				return false;
 			}
 		
-	}
-
-	@Override
-	public boolean updateCart(Cart cart) {
-		try {
-			
-			sessionFactory.getCurrentSession().update(cart);
-			return true;
-		}
-		catch(Exception ex) {
-			ex.printStackTrace();
-			return false;
-		}
 	}
 
 	@Override
